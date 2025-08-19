@@ -1,0 +1,149 @@
+<html>
+
+    <head>
+        <title>GPS BOY</title>
+    </head>
+
+    <body text="#FFFFFF" link="#FFFF00" alink="#20FF20" vlink="#C0B000"
+          background="fondo.gif" bgcolor="#07077B">
+
+        <p align=Center><img border=0 src="titulo.gif">
+
+        <p align=center>
+
+        Welcome to the <b>GPS BOY</b> home page. Yet another GB hardware project...
+        <br><br>
+        (Last update: 14/10/2004)
+
+        <p align=left><img border=0 src="barra1.gif">
+
+        <table border=0 cellspacing=5 border-width: 1 width="90%"
+               align=center>
+
+            <tr>
+
+                <td align=left valign=top width=60%>
+
+<b>GPS BOY</b> is a portable GPS (<b>G</b>lobal <b>P</b>ositioning <b>S</b>ystem)
+receiver system based on a GPS integrable module
+<a href="http://www.trimble.com/lassenskii.html">(Trimble's Lassen SK II)</a>
+and a Game Boy Color. As I guess you already know,  GPS is a system
+for obtaining the exact position coordinates (and other data) of a receiver
+placed anywhere on Earth. The receiver uses an antenna to track the signals
+sent by a group of satellites known as the <b>GPS constellation</b>, and
+uses the received data to calculate longitude, latitude, speed, etc.
+<p>
+I know, adding GPS capabilities to a GBC is not a new idea. Actually there is
+a previous project by <a href="http://teamknox.tripod.com">TeamKNOx</a>
+called <b>GB GPS</b> which already did. However, since I developed this
+for fun, I decided to release it for the sake of the GB development "scene".
+<p>
+To run this you will need:
+<p>
+<li>A Game Boy Color (it won't work with GB Pocket nor GB Advance).
+<li>A <a href="http://www.trimble.com/lassenskii.html">Lassen SK II</a>
+(GPS receptor board).
+<li>A serial cable to connect both devices. See the package's documentation for
+further info.
+
+                </td>
+
+                <td width=40%>
+                    <img src="sample1.gif" >
+                </td>
+
+            </tr>
+        </table>
+
+        <table border=0 cellspacing=5 border-width: 1 width="90%"
+               align=center>
+            <tr>
+
+    <td width=40% height="318"><img src="sample2.gif" ></td>
+                <td align=left width=60%>
+
+Basically, the GBC and GPS receiver board are connected through a
+serial cable. The provided software (ROM image file) must then be loaded into
+the GBC using your favourite flash card (Bung, etc.), and both devices
+turned on. When the system is operating, the GBC communicates with the
+GPS board using a serial protocol called TAIP to configure, obtain
+GPS data, etc. Position values, time, status, etc. are shown on the
+color LCD screen, as you can see in the sample pictures. It also
+includes an experimental map function.
+<p>
+<p>
+For any comment, suggestion or complain, you can contact the author
+(Enrique Sanchez) at the e-mail addresses included in the documentation.
+      <p> Greetings to <b>Martin Korth</b>, the best Game Boy emulator programmer around.
+        <b>:-)</b>
+      <p>&nbsp; </td>
+
+            </tr>
+
+        </table>
+
+
+<table width="90%" border="0" align="center" cellpadding="0" cellspacing="5">
+  <tr>
+    <td width="61%"><p><b>Latest news:</b></p>
+      <p><b>Gerd Bartelt</b> has reported that <b>GPS BOY</b> will also work fine
+        using a different GPS module: the <a href="http://www.trimble.com/lassensq.html">
+        Lassen SQ</a>. This is a more compact
+        module than the Lassen SK II, and it is compatible with it at serial communication
+        level (same protocols, voltage, etc.), so you can use it instead. You won't
+        need to change a single bit of the software, only the physical connection to
+        the GPS module and the power supply (3V instead of 5V) need to be adapted.</p>
+      <p>See how compact it can be with this new <b>Lassen SQ</b> module, including
+        an embedded type antenna.<br>
+        <br>
+        Thanks a lot for the picture, Gerd!</p></td>
+    <td width="5%">&nbsp;</td>
+    <td width="34%"><img src="sq-pic.jpg" width="210" height="259"></td>
+  </tr>
+</table>
+<p><img src="barra2.gif"> </p>
+<table border=0 cellspacing=0 border-width: 1 width="90%"
+               align=center>
+
+            <tr>
+
+                <td align=left width=100%>
+
+GPS BOY is provided for free, including source code. It is intended
+for educational purposes, so you shouldn't use it commercially
+(at least not without my permission). Also I won't
+accept any responsabilities on the possible damage you may cause using
+this thing.
+<p>
+If you are seriously interested, I encourage you to download the package
+and read all the documentation. Though brief, all you need to know about
+connections, instructions of use, etc. is there.
+
+        <p align=center>
+        Click below to download the full <b>GPS BOY</b>
+        package, and have fun.
+
+
+            <h4><p align=center><a href="gpsboy.zip">GPSBOY.ZIP</a></h4>
+            <p align=center>(490Kb)
+</table>
+        <p><hr><br>
+        <p align=center><b>BONUS</b>: There's also this crappy game I wrote some
+        time ago, for a Bung competition. It's called <b>Friki Race</b>.
+        <p>
+
+        <table border=0 cellspacing=0 border-width: 1 width="45%"
+                       align=center>
+            <tr>
+                <td width=50%>
+                    <img src="frikirc.gif" align=center border=1>
+                </td>
+                <td align=center valign=center>
+                    <h4><a href="frikirc.zip">FRIKIRC.ZIP</a></h4>
+                    <p>(17Kb)
+                </td>
+            </tr>
+        </table>
+    </body>
+</HTML>
+
