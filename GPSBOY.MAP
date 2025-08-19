@@ -1,0 +1,156 @@
+Bank #0 (HOME):
+  SECTION: $0000-$014F ($0150 bytes)
+           $0000 = RST_00
+           $0008 = RST_08
+           $0010 = RST_10
+           $0018 = RST_18
+           $0020 = RST_20
+           $0028 = RST_28
+           $0030 = RST_30
+           $0038 = RST_38
+  SECTION: $0150-$0251 ($0102 bytes)
+           $0154 = VBlankInt
+           $0190 = WaitVB
+           $0185 = LCDOff
+           $020C = MemFill
+           $0150 = SetROMBank
+           $01AA = HWInit
+           $01FD = MemCopy
+           $021A = LoadPalBG
+           $0240 = DMATransHB
+           $019D = WaitHB
+           $022D = LoadPalSp
+           $015D = ReadPad
+  SECTION: $0252-$0352 ($0101 bytes)
+           $0313 = delay_103c
+           $02A4 = _rdbytens
+           $0296 = SrReadByte
+           $02D1 = SrSendByte
+           $030F = delay_109c
+           $031A = delay_93c
+           $0318 = delay_96c
+           $0252 = SrWaitIdle
+           $031E = delay_87c
+           $0316 = delay_99c
+           $0267 = SrReadPkts
+           $028C = SrSendPkt
+  SECTION: $0353-$0D88 ($0A36 bytes)
+           $0353 = Start
+           $0BEB = ShowErrMsg
+           $05C0 = SendIPos
+           $0645 = InitNavScr
+           $045B = GetReport
+           $0BC8 = ChkKeys
+           $0472 = CommRecovr
+           $09C9 = InitMap
+           $04D8 = UpdGPSData
+           $06BF = UpdNavScr
+           $0A6A = UpdateMap
+           $05ED = UpdIPos
+           $03CF = Start.mainloop
+           $0C51 = MinutConv
+           $0C8D = MilesToKm
+           $05E3 = SendIPos.cmpstr
+           $07E0 = UpdNavScr.prncrds
+           $0880 = UpdNavScr.drwicon
+           $089B = UpdNavScr.prnstr
+           $08B1 = UpdNavScr.prn3fl
+           $08D7 = DrwHdnPic
+           $0864 = UpdNavScr.pcpi
+           $085C = UpdNavScr.pcp
+           $0AFB = UpdateMap.nomap
+           $0CFF = CmpAscii
+           $0D22 = SubAscii
+           $0D49 = AsciTo16
+           $0B09 = DrawMap
+           $0CDA = MilesToKm.addasc
+    SLACK: $3277 bytes
+
+Bank #1:
+  SECTION: $4000-$69C8 ($29C9 bytes)
+           $691D = ErrorMsg0
+           $6873 = Pkt_SetTAIP
+           $6882 = Pkt_NoRPV
+           $68A8 = Pkt_GetVR
+           $6945 = ErrorMsg1
+           $6890 = Pkt_GetST
+           $6896 = Pkt_GetAL
+           $689C = Pkt_GetPV
+           $68A2 = Pkt_GetTM
+           $6972 = ErrorMsg2
+           $681C = TrkIcons
+           $6825 = SrcVals
+           $68AE = IP_Data
+           $4000 = CharSet
+           $6680 = NavPalettes
+           $66C0 = NavScrAtts
+           $686B = InvBigStr
+           $6865 = InvalidStr
+           $682D = SrcMsgs
+           $68F1 = Mult50Tbl
+           $67F8 = HdnAttrs1
+           $6801 = HdnAttrs2
+           $680A = HdnAttrs3
+           $6813 = HdnAttrs4
+           $679C = HdnChrPts
+           $4C00 = HdnPics
+           $6670 = MapSprPtn
+           $66B0 = MapPalette
+           $66B8 = MapSprPalette
+           $68C5 = MapMinLat
+           $68CD = MapMaxLat
+           $68D5 = MapMinLng
+           $68DE = MapMaxLng
+           $699C = ErrorMsg3
+           $68E7 = Mult6TblBCD
+           $68F5 = AscTb1000
+           $6909 = AscTb100
+    SLACK: $1637 bytes
+
+Bank #2:
+  SECTION: $4000-$79A7 ($39A8 bytes)
+           $58EE = YCrd2Map
+           $4000 = XCrd2Map
+    SLACK: $0658 bytes
+
+BSS:
+  SECTION: $C000-$C558 ($0559 bytes)
+           $C159 = Buffer
+           $C105 = Age_AL
+           $C111 = Age_PV
+           $C103 = TrackingStat
+           $C104 = AntennaStat
+           $C110 = Source_PV
+           $C000 = ScreenMode
+           $C001 = RxCntr
+           $C102 = RpErrCnt
+           $C002 = Buf_ST
+           $C042 = Buf_AL
+           $C082 = Buf_PV
+           $C0C2 = Buf_TM
+           $C106 = Altitude
+           $C10C = VSpeed
+           $C112 = Latitude
+           $C136 = DecimLat
+           $C11B = Longitude
+           $C13E = DecimLng
+           $C124 = Velocity
+           $C127 = Heading
+           $C12A = GPSTime
+           $C130 = GPSDate
+           $C157 = HdnSetFlag
+           $C158 = Crd0Flag
+           $C147 = MapScX
+           $C148 = MapScY
+           $C149 = MapTlOff
+           $C14B = MapPgRow
+           $C14C = MapPage
+           $C14D = M2KmBuf
+    SLACK: $1AA7 bytes
+
+VRAM:
+  EMPTY
+
+HRAM:
+  EMPTY
+

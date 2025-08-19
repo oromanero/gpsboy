@@ -1,0 +1,97 @@
+
+In case you don't own the actual GPS receiver (Lassen SK II board)
+but want to test the system by sending dummy GPS data from a PC to
+the GBC through the serial port, here's a little explanation of
+what the software is expecting to receive:
+
+
+- Serial communication must be 9600 bps, parity odd, 1 stop bit.
+
+
+- After turning on the GBC, the program will check the receiver's activity
+by waiting for a couple of periodical data packets. You must send a byte
+string (any length and values will do to cheat it), then wait for around
+one second and send some consecutive bytes again.
+
+
+- If you did it right, the GBC will then send the following data string
+to try to configurate the receiver protocol (in hexadecimal):
+
+        10 BC 00 07 07 03 01 00 00 01 01 00 10 03
+
+
+- From now on, the program expects to communicate using an ASCII protocol
+called TAIP. Every TAIP message is delimited by '>' and '<' characters.
+Firstly, it will send another configuration message:
+
+    >FPV00000000<
+
+You don't need to care about this. Next, it will send the following message:
+
+    >QVR<
+
+Now you must send some consecutive bytes in response (again, it won't care
+about its values).
+
+
+- If everything went all right, the program will enter the main loop and
+will request GPS data from the receiver at about 1 second intervals.
+Data is requested by using four types of TAIP messages. Here's how you must
+answer to them every time you receive them (message length must be EXACTLY
+as shown):
+
+------------------------------------------------------------------------------
+
+    Request:    >QST<
+    Response:   >RST00015A0200;*00<
+
+------------------------------------------------------------------------------
+
+    Request:    >QAL<
+    Response:   >RAL00000aaaaaabbbb12;*00<
+                                                where   aaaaaa = altitude
+                                                        bbbb = vertical speed
+
+            Example:  >RAL00000+01520+02512;*00<
+
+                        (1520m above mean sea level / 25 mph upwards)
+
+------------------------------------------------------------------------------
+
+    Request:    >QPV<
+    Response:   >RPV00000aaaaaaaabbbbbbbbbcccddd12;*00<
+
+                                                where   aaaaaaaa = latitude
+                                                        bbbbbbbbb = longitude
+                                                        ccc = speed
+                                                        ddd = heading
+
+            Example:  >RPV00000+3423567+0147654302700512;*00<
+
+                        (34.23567 degs north / 14.76543 degs east /
+                         27mph / 5 degs from N eastwardly)
+
+------------------------------------------------------------------------------
+
+    Request:    >QTM<
+    Response:   >RTMaaaabbbbbcccccccc00104100000;*00<
+
+                                                where   aaaa = hour & minutes
+                                                        bbbbb = seconds
+                                                        cccccccc = date
+
+            Example:  >RTM1345230000601199000104100000;*00<
+
+                        (13:45:23.000s / 06-01-1990)
+
+------------------------------------------------------------------------------
+
+
+- HINT: The map of Seville (Spain) will appear on screen when coordinates
+  range the following values:
+
+        Latitude:   +37.34378  to  +37.42755
+
+        Longitude:  -006.00713  to  -005.94332
+
+
